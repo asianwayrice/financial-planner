@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHS Financial Planner</title>
+    <link rel="stylesheet" href="../CSS Part/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Financial Planner</h1>
+        <p>Your toolkit for budgeting, savings, debt, and career management.</p>
+        
+        <nav>
+            <ul class="tab-menu">
+                <li><button class="tab-link active" onclick="openTab(event, 'budgeting')">Budgeting</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'savings')">Savings</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'debt')">Debt Management</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'career')">Career Tools</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="budgeting" class="tab-content" style="display: block;">
+            <h2>Budgeting Calculator</h2>
+            <div id="budgeting-container">
+                <p>Welcome to the budgeting tool.</p>
+            </div>
+        </section>
+
+        <section id="savings" class="tab-content" style="display: none;">
+            <h2>Savings Goals</h2>
+            <div id="savings-container">
+                <p>Plan your savings here.</p>
+            </div>
+        </section>
+
+        <section id="debt" class="tab-content" style="display: none;">
+            <h2>Debt Management</h2>
+            <div id="debt-container">
+                <p>Manage and calculate your debt payoff.</p>
+            </div>
+        </section>
+
+        <section id="career" class="tab-content" style="display: none;">
+            <h2>Career & Salary Planner</h2>
+            <div id="career-container">
+                <p>Track career and salary progression.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../JavaScript Part/tabs.js"></script>
+    <script src="../JavaScript Part/budgeting.js"></script>
+    <script src="../JavaScript Part/savings.js"></script>
+    <script src="../JavaScript Part/debt.js"></script>
+    <script src="../JavaScript Part/career.js"></script>
+
+</body>
+</html>
