@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planner</title>
+    <link rel="stylesheet" href="../CSS Part/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Financial Planner</h1>
+        <p>Your toolkit for budgeting, savings, debt, and career management.</p>
+        
+        <nav>
+            <ul class="tab-menu">
+                <li><button class="tab-link active" onclick="openTab(event, 'budgeting')">Budgeting</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'savings')">Savings</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'debt')">Debt Management</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'career')">Career Tools</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="budgeting" class="tab-content" style="display: block;">
+            <h2>Budgeting Calculator</h2>
+            <div id="budgeting-container">
+                <p>Welcome to the budgeting tool.</p>
+            </div>
+            <div class="info-box">
+                <h3>The 50/30/20 Rule</h3>
+                <p>A popular US budgeting framework to organize your take-home pay:</p>
+                <div class="info-grid">
+                    <div class="card"><strong>50% Needs:</strong> Rent, groceries, utilities, and insurance.</div>
+                    <div class="card"><strong>30% Wants:</strong> Dining out, hobbies, and subscriptions.</div>
+                    <div class="card"><strong>20% Financial:</strong> Debt payments and emergency savings.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="savings" class="tab-content" style="display: none;">
+            <h2>Savings Goals</h2>
+            <div id="savings-container">
+                <p>Plan your savings here.</p>
+            </div>
+            <div class="info-box">
+                <h3>Building Your Safety Net</h3>
+                <p>Financial experts in the US generally recommend two types of savings:</p>
+                <ul>
+                    <li><strong>Emergency Fund:</strong> 3–6 months of essential expenses kept in a High-Yield Savings Account (HYSA).</li>
+                    <li><strong>Compound Interest:</strong> The earlier you save, the more your interest earns interest.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="debt" class="tab-content" style="display: none;">
+            <h2>Debt Management</h2>
+            <div id="debt-container">
+                <p>Manage and calculate your debt payoff.</p>
+            </div>
+            <div class="info-box">
+                <h3>Debt Payoff Strategies</h3>
+                <div class="info-grid">
+                    <div class="card">
+                        <strong>The Avalanche Method</strong>
+                        <p>Pay the highest interest rate first. This saves you the most money in total interest.</p>
+                    </div>
+                    <div class="card">
+                        <strong>The Snowball Method</strong>
+                        <p>Pay the smallest balance first. This creates psychological "wins" to keep you motivated.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="career" class="tab-content" style="display: none;">
+            <h2>Career & Salary Planner</h2>
+            <div id="career-container">
+                <p>Track career and salary progression.</p>
+            </div>
+            <div class="info-box">
+                <h3>Understanding Your Paycheck</h3>
+                <p>In the US, your "Gross Pay" is not what you keep. Here’s what disappears:</p>
+                <div class="info-grid">
+                    <div class="card"><strong>FICA Taxes:</strong> 7.65% for Social Security and Medicare.</div>
+                    <div class="card"><strong>401(k) Match:</strong> If your employer matches contributions, it's essentially a 100% return on your money.</div>
+                    <div class="card"><strong>Income Tax:</strong> Federal and State brackets vary based on where you live.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../JavaScript Part/tabs.js"></script>
+    <script src="../JavaScript Part/budgeting.js"></script>
+    <script src="../JavaScript Part/savings.js"></script>
+    <script src="../JavaScript Part/debt.js"></script>
+    <script src="../JavaScript Part/career.js"></script>
+
+</body>
+</html>
