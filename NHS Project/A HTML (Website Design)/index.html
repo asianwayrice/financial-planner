@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHS Financial Planning</title>
+    <link rel="stylesheet" href="../CSS Part/style.css">
+</head>
+<body>
+
+    <header style="background:#ffffff; border-bottom:1px solid #e0e8e1;">
+        <div style="max-width:980px; margin:0 auto; display:grid; grid-template-columns:1fr auto; align-items:flex-start; gap:24px; padding:24px 0;">
+            <div style="text-align:left;">
+                <h1 style="margin:0 0 8px;">Welcome to Financial Planning</h1>
+                <p style="margin:0; color:#444;">Take control of your money with budgeting, savings, debt, and career planning tools.</p>
+            </div>
+            <div style="display:flex; justify-content:flex-end; align-items:flex-start;">
+                <p style="margin:0; font-size:0.95rem; color:#333; white-space:nowrap;">Contact me at <a href="mailto:gochris0918@gmail.com" style="color:#004d2c; text-decoration:none;">gochris0918@gmail.com</a></p>
+            </div>
+        </div>
+    </header>
+
+    <main style="max-width:980px; margin: 0 auto; padding: 24px;">
+        <section style="background:#ffffff; padding:24px; border-radius:14px; border:1px solid #d7e8df; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+            <h2>Get started with your financial toolkit</h2>
+            <p>Use the planner to build a budget, reach your savings goals, pay off debt faster, and estimate your take-home pay.</p>
+            <a href="planner.html" style="display:inline-block; margin-top:18px; padding:14px 24px; background:#004d2c; color:#fff; text-decoration:none; border-radius:8px; font-weight:700;">Open the Planner</a>
+        </section>
+
+        <section style="display:grid; gap:16px; margin-top:24px;">
+            <article style="background:#f8faf8; padding:18px; border-radius:12px; border:1px solid #dfeae2;">
+                <h3>Budgeting</h3>
+                <p>Plan how your income should be divided between essentials, wants, and savings.</p>
+            </article>
+            <article style="background:#f8faf8; padding:18px; border-radius:12px; border:1px solid #dfeae2;">
+                <h3>Savings</h3>
+                <p>Set savings targets and calculate how long it takes to reach them.</p>
+            </article>
+            <article style="background:#f8faf8; padding:18px; border-radius:12px; border:1px solid #dfeae2;">
+                <h3>Debt</h3>
+                <p>See a clear payoff plan and estimate total interest saved.</p>
+            </article>
+            <article style="background:#f8faf8; padding:18px; border-radius:12px; border:1px solid #dfeae2;">
+                <h3>Career Tools</h3>
+                <p>Estimate take-home pay using federal and state tax rates, then model raises and 401(k) match.</p>
+            </article>
+        </section>
+
+        <section id="quiz" style="background:#ffffff; padding:24px; border-radius:14px; border:1px solid #d7e8df; box-shadow:0 2px 12px rgba(0,0,0,0.06); margin-top:24px;">
+            <h2>Financial Quiz</h2>
+            <p>Answer four quick questions about US personal finance. One question uses your state and income to check your answer.</p>
+            <form id="finance-quiz" style="display:grid; gap:18px; margin-top:16px;">
+                <div style="display:grid; gap:12px;">
+                    <label style="font-weight:700;">1. Choose your state and income, then select the state income tax level that best fits your situation.</label>
+                    <div style="display:grid; gap:10px;">
+                        <label style="display:block;">State<select id="quiz-state" style="width:100%; padding:10px; border:1px solid #b3d7c5; border-radius:8px;">
+                            <option value="">Select state</option>
+                            <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option>
+                            <option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">Washington DC</option><option value="FL">Florida</option>
+                            <option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option>
+                            <option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option>
+                            <option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select></label>
+                        <label style="display:block;">Annual income ($)<input id="quiz-income" type="number" min="0" step="100" placeholder="e.g. 50000" style="width:100%; padding:10px; border:1px solid #b3d7c5; border-radius:8px;" /></label>
+                        <label style="display:block;">State income tax answer<select id="quiz-state-answer" style="width:100%; padding:10px; border:1px solid #b3d7c5; border-radius:8px;">
+                            <option value="">Select answer</option>
+                            <option value="none">No state income tax</option>
+                            <option value="low">Low state income tax</option>
+                            <option value="medium">Medium state income tax</option>
+                            <option value="high">High state income tax</option>
+                        </select></label>
+                    </div>
+                </div>
+                <div style="display:grid; gap:12px;">
+                    <label style="font-weight:700;">2. In the 50/30/20 rule, what percentage is recommended for "Needs"?</label>
+                    <select id="quiz-needs-answer" style="width:100%; padding:10px; border:1px solid #b3d7c5; border-radius:8px;">
+                        <option value="">Select answer</option>
+                        <option value="40%">40%</option>
+                        <option value="50%">50%</option>
+                        <option value="60%">60%</option>
+                    </select>
+                </div>
+                <div style="display:grid; gap:12px;">
+                    <label style="font-weight:700;">3. How many months of expenses should your emergency fund cover?</label>
+                    <select id="quiz-emergency-answer" style="width:100%; padding:10px; border:1px solid #b3d7c5; border-radius:8px;">
+                        <option value="">Select answer</option>
+                        <option value="1">1 month</option>
+                        <option value="3-6">3 to 6 months</option>
+                        <option value="12">12 months</option>
+                    </select>
+                </div>
+                <div style="display:grid; gap:12px;">
+                    <label style="font-weight:700;">4. In the 50/30/20 rule, what is the 20% category meant for?</label>
+                    <select id="quiz-20-answer" style="width:100%; padding:10px; border:1px solid #b3d7c5; border-radius:8px;">
+                        <option value="">Select answer</option>
+                        <option value="needs">Needs</option>
+                        <option value="wants">Wants</option>
+                        <option value="financial">Financial goals and debt payoff</option>
+                        <option value="taxes">Taxes</option>
+                    </select>
+                </div>
+                <button id="quiz-submit" type="button" style="padding:14px 24px; background:#004d2c; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:700; width:fit-content;">Submit Quiz</button>
+                <div id="quiz-result" style="padding:16px 0; color:#333;"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer style="text-align:center; padding:14px 0; color:#555;">
+        <p>Need help? Click "Open the Planner" to begin.</p>
+    </footer>
+
+    <script>
+        const stateTaxRates = {
+            'AL': 5.00,'AK': 0.00,'AZ': 2.50,'AR': 4.40,'CA': 9.30,'CO': 4.40,'CT': 6.50,'DE': 6.60,'FL': 0.00,'GA': 5.75,
+            'HI': 6.40,'ID': 5.80,'IL': 4.95,'IN': 3.23,'IA': 5.60,'KS': 5.70,'KY': 5.00,'LA': 4.25,'ME': 7.15,'MD': 5.75,
+            'MA': 5.00,'MI': 4.25,'MN': 6.80,'MS': 4.00,'MO': 4.40,'MT': 6.75,'NE': 5.01,'NV': 0.00,'NH': 0.00,'NJ': 5.53,
+            'NM': 4.90,'NY': 6.33,'NC': 4.99,'ND': 2.90,'OH': 3.99,'OK': 4.75,'OR': 9.90,'PA': 3.07,'RI': 5.99,'SC': 4.00,
+            'SD': 0.00,'TN': 0.00,'TX': 0.00,'UT': 4.85,'VT': 6.50,'VA': 5.75,'WA': 0.00,'WV': 4.00,'WI': 5.30,'WY': 0.00,
+            'DC': 6.00
+        };
+        const noTaxStates = ['AK', 'FL', 'NV', 'SD', 'TN', 'TX', 'WA', 'WY', 'NH'];
+
+        const getStateTaxCategory = (state, income) => {
+            if (!state) return '';
+            if (noTaxStates.includes(state)) return 'none';
+            const baseRate = stateTaxRates[state] || 4.5;
+            const effectiveRate = income <= 0 ? baseRate : income < 40000 ? baseRate * 0.55 : income < 90000 ? baseRate * 0.8 : baseRate;
+            if (effectiveRate < 2.5) return 'low';
+            if (effectiveRate < 6) return 'medium';
+            return 'high';
+        };
+
+        const quizSubmit = document.getElementById('quiz-submit');
+        const resultContainer = document.getElementById('quiz-result');
+
+        quizSubmit.addEventListener('click', () => {
+            const state = document.getElementById('quiz-state').value;
+            const income = parseFloat(document.getElementById('quiz-income').value) || 0;
+            const stateAnswer = document.getElementById('quiz-state-answer').value;
+            const needsAnswer = document.getElementById('quiz-needs-answer').value;
+            const emergencyAnswer = document.getElementById('quiz-emergency-answer').value;
+            const answer20 = document.getElementById('quiz-20-answer').value;
+
+            const actualStateCategory = getStateTaxCategory(state, income);
+            const answers = [];
+            let score = 0;
+
+            if (!state || income <= 0 || !stateAnswer) {
+                answers.push('<p style="color:#b71c1c;">Question 1: Select your state, enter valid income, and choose an answer.</p>');
+            } else {
+                const correct = stateAnswer === actualStateCategory;
+                score += correct ? 1 : 0;
+                answers.push(`<p><strong>Question 1:</strong> Your state is ${state} and income is $${income.toLocaleString()}. Correct answer: <strong>${actualStateCategory === 'none' ? 'No state income tax' : actualStateCategory.charAt(0).toUpperCase() + actualStateCategory.slice(1) + ' state income tax'}</strong>. You answered: <strong>${stateAnswer === 'none' ? 'No state income tax' : stateAnswer.charAt(0).toUpperCase() + stateAnswer.slice(1) + ' state income tax'}</strong>. ${correct ? '✅' : '❌'}</p>`);
+            }
+
+            if (!needsAnswer) {
+                answers.push('<p style="color:#b71c1c;">Question 2: Choose the recommended Needs percentage.</p>');
+            } else {
+                const correct = needsAnswer === '50%';
+                score += correct ? 1 : 0;
+                answers.push(`<p><strong>Question 2:</strong> Recommended Needs percentage is <strong>50%</strong>. You answered <strong>${needsAnswer}</strong>. ${correct ? '✅' : '❌'}</p>`);
+            }
+
+            if (!emergencyAnswer) {
+                answers.push('<p style="color:#b71c1c;">Question 3: Choose how many months of expenses an emergency fund should cover.</p>');
+            } else {
+                const correct = emergencyAnswer === '3-6';
+                score += correct ? 1 : 0;
+                answers.push(`<p><strong>Question 3:</strong> A healthy emergency fund should cover <strong>3 to 6 months</strong> of expenses. You answered <strong>${emergencyAnswer === '3-6' ? '3 to 6 months' : emergencyAnswer + ' month(s)'}</strong>. ${correct ? '✅' : '❌'}</p>`);
+            }
+
+            if (!answer20) {
+                answers.push('<p style="color:#b71c1c;">Question 4: Choose the correct purpose for the 20% category.</p>');
+            } else {
+                const correct = answer20 === 'financial';
+                score += correct ? 1 : 0;
+                answers.push(`<p><strong>Question 4:</strong> The 20% category is for <strong>financial goals and debt payoff</strong>. You answered <strong>${answer20 === 'financial' ? 'Financial goals and debt payoff' : answer20.charAt(0).toUpperCase() + answer20.slice(1)}</strong>. ${correct ? '✅' : '❌'}</p>`);
+            }
+
+            resultContainer.innerHTML = `<div style="background:#f5fdf6; border:1px solid #b3d7c5; border-radius:10px; padding:16px;"><p style="margin:0 0 10px; font-weight:700;">Score: ${score} / 4</p>${answers.join('')}</div>`;
+        });
+    </script>
+</body>
+</html>

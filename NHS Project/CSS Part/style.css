@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light grey background like the site */
+    color: #333;
+}
+
+/* Header & Logo Area */
+header {
+    background-color: white;
+    border-bottom: 4px solid #004d2c; /* The signature green border */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: #004d2c;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Navigation Menu */
+nav {
+    background-color: #333; /* Dark grey/black nav bar */
+    padding: 10px 0;
+}
+
+.tab-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.tab-menu li {
+    margin: 0 15px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.tab-link:hover {
+    color: #00a859; /* Lighter green on hover */
+}
+
+.tab-link.active {
+    border-bottom: 2px solid white;
+}
+
+/* Main Content Area */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    min-height: 400px;
+}
+
+h2 {
+    color: #004d2c;
+    border-left: 5px solid #004d2c;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+/* Form/Input Styling (Prep for your calculators) */
+input, select, button {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Tab Content Visibility */
+.tab-content {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.info-box {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f4f9f6; /* Light green tint */
+    border-radius: 10px;
+    border-left: 5px solid #004d2c; /* Professional green accent */
+    color: #333;
+}
+
+.info-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+}
+
+.info-box h3 {
+    margin-top: 0;
+    color: #004d2c;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
