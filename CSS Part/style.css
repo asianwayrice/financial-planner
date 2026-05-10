@@ -47,23 +47,28 @@ nav {
 }
 
 .tab-link {
-    background: none;
-    border: none;
-    color: white;
+    background: #e8f3ea;
+    border: 1px solid #d7e8df;
+    color: #004d2c;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.85rem;
     cursor: pointer;
-    padding: 5px 10px;
-    transition: color 0.3s;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: background 0.25s, color 0.25s, transform 0.25s;
 }
 
 .tab-link:hover {
-    color: #00a859; /* Lighter green on hover */
+    background: #d7ebdd;
+    color: #004d2c;
+    transform: translateY(-1px);
 }
 
 .tab-link.active {
-    border-bottom: 2px solid white;
+    background: #004d2c;
+    border-color: #004d2c;
+    color: #ffffff;
 }
 
 /* Main Content Area */
