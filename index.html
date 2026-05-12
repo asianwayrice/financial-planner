@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Planning</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -14,7 +14,8 @@
                 <h1 style="margin:0 0 8px;">Welcome to Financial Planning</h1>
                 <p style="margin:0; color:#444;">Take control of your money with budgeting, savings, debt, and career planning tools.</p>
             </div>
-            <div style="display:flex; justify-content:flex-end; align-items:flex-start;">
+            <div style="display:flex; justify-content:flex-end; align-items:flex-start; gap:12px;">
+                <button id="theme-toggle" class="theme-toggle" type="button">Dark Mode</button>
                 <p style="margin:0; font-size:0.95rem; color:#333; white-space:nowrap;">Contact me at <a href="mailto:gochris0918@gmail.com" style="color:#004d2c; text-decoration:none;">gochris0918@gmail.com</a></p>
             </div>
         </div>
@@ -140,6 +141,18 @@
                         <div class="card" style="background:#f8faf8; padding:14px; border-radius:10px; border:1px solid #dfeae2;"><strong>20% Financial:</strong> Debt payments and emergency savings.</div>
                     </div>
                 </div>
+                <section id="budget-chart-section" style="background:#ffffff; padding:20px; border-radius:14px; border:1px solid #d7e8df; box-shadow:0 2px 12px rgba(0,0,0,0.06); margin-top:20px; max-width:740px; margin-left:auto; margin-right:auto;">
+                    <h3>50/30/20 Visual</h3>
+                    <p style="margin-top:0;">See how the budgeting rule divides your take-home pay.</p>
+                    <div id="budget-chart-container" style="display:grid; gap:16px; align-items:center; justify-items:center; width:100%;">
+                        <canvas id="budget-donut-chart" width="260" height="260" aria-label="Budget donut chart" role="img"></canvas>
+                        <div class="chart-legend" style="width:100%; max-width:340px; display:grid; gap:10px;">
+                            <div class="chart-legend-item" style="display:flex; align-items:center; gap:10px;"><span class="chart-color-swatch" style="background:#0f766e;"></span><strong>Needs</strong><span style="margin-left:auto; color:#555;">50%</span></div>
+                            <div class="chart-legend-item" style="display:flex; align-items:center; gap:10px;"><span class="chart-color-swatch" style="background:#2563eb;"></span><strong>Wants</strong><span style="margin-left:auto; color:#555;">30%</span></div>
+                            <div class="chart-legend-item" style="display:flex; align-items:center; gap:10px;"><span class="chart-color-swatch" style="background:#14b8a6;"></span><strong>Savings</strong><span style="margin-left:auto; color:#555;">20%</span></div>
+                        </div>
+                    </div>
+                </section>
             </section>
             <section id="savings" class="tab-content" style="display: none;">
                 <h3>Savings Goals</h3>
@@ -181,11 +194,12 @@
         <p>Need help? Use the planner section above to access budgeting, savings, debt, and career tools.</p>
     </footer>
 
-    <script src="js/tabs.js"></script>
-    <script src="js/budgeting.js"></script>
-    <script src="js/savings.js"></script>
-    <script src="js/debt.js"></script>
-    <script src="js/career.js"></script>
+    <script src="../js/tabs.js"></script>
+    <script src="../js/budgeting.js"></script>
+    <script src="../js/savings.js"></script>
+    <script src="../js/debt.js"></script>
+    <script src="../js/career.js"></script>
+    <script src="../js/charts.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -289,6 +303,29 @@
                 }
 
                 resultContainer.innerHTML = `<div style="background:#f5fdf6; border:1px solid #b3d7c5; border-radius:10px; padding:16px;"><p style="margin:0 0 10px; font-weight:700;">Score: ${score} / 4</p>${answers.join('')}</div>`;
+            });
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const currentMode = localStorage.getItem('preferredTheme');
+
+            const applyTheme = (mode) => {
+                document.body.classList.toggle('dark-mode', mode === 'dark');
+                themeToggle.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+                localStorage.setItem('preferredTheme', mode);
+                window.dispatchEvent(new Event('theme-change'));
+            };
+
+            const detectTheme = () => {
+                if (currentMode) {
+                    return currentMode;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            applyTheme(detectTheme());
+
+            themeToggle.addEventListener('click', () => {
+                applyTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark');
             });
         });
     </script>
