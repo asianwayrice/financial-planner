@@ -1,16 +1,32 @@
-/* General Styles */
+:root {
+    --bg: #f4f4f4;
+    --surface: #ffffff;
+    --surface-soft: #f8faf8;
+    --text: #333333;
+    --muted: #666666;
+    --border: #d7e8df;
+    --accent: #004d2c;
+    --accent-soft: #d7ebdd;
+    --button-bg: #004d2c;
+    --button-text: #ffffff;
+    --nav-bg: #333333;
+    --header-bg: #ffffff;
+    --card-bg: #ffffff;
+    --footer-bg: transparent;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light grey background like the site */
-    color: #333;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /* Header & Logo Area */
 header {
     background-color: white;
-    border-bottom: 4px solid #004d2c; /* The signature green border */
+    border-bottom: 4px solid #004d2c;
     padding: 20px 0;
     text-align: center;
 }
@@ -30,7 +46,7 @@ header p {
 
 /* Navigation Menu */
 nav {
-    background-color: #333; /* Dark grey/black nav bar */
+    background-color: #333;
     padding: 10px 0;
 }
 
@@ -71,6 +87,61 @@ nav {
     color: #ffffff;
 }
 
+.theme-toggle {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.theme-toggle:hover {
+    filter: brightness(1.05);
+}
+
+#budget-chart-container {
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#budget-chart-container canvas {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.chart-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.chart-color-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+body.dark-mode #budget-chart-container {
+    background-color: #111826 !important;
+    border-color: #334155 !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35) !important;
+}
+
+body.dark-mode .chart-legend-item span:last-child {
+    color: #94a3b8 !important;
+}
+
 /* Main Content Area */
 main {
     max-width: 1000px;
@@ -89,7 +160,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Form/Input Styling (Prep for your calculators) */
+/* Form/Input Styling */
 input, select, button {
     padding: 10px;
     margin: 10px 0;
@@ -110,9 +181,9 @@ input, select, button {
 .info-box {
     margin-top: 50px;
     padding: 20px;
-    background-color: #f4f9f6; /* Light green tint */
+    background-color: #f4f9f6;
     border-radius: 10px;
-    border-left: 5px solid #004d2c; /* Professional green accent */
+    border-left: 5px solid #004d2c;
     color: #333;
 }
 
@@ -142,4 +213,349 @@ ul {
 
 li {
     margin-bottom: 10px;
+}
+
+/* ─── Dark Mode ────────────────────────────────────────────────────────────── */
+
+body.dark-mode {
+    background-color: #0b1320 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode header {
+    background-color: #08111f !important;
+    border-bottom-color: #1f2937 !important;
+}
+
+body.dark-mode header h1 {
+    color: #7ee2b8 !important;
+}
+
+body.dark-mode header p,
+body.dark-mode footer,
+body.dark-mode label,
+body.dark-mode .tab-link,
+body.dark-mode .tab-content,
+body.dark-mode .info-box,
+body.dark-mode .card,
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button,
+body.dark-mode .theme-toggle {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode article,
+body.dark-mode .info-box,
+body.dark-mode .card,
+body.dark-mode footer {
+    background-color: #111826 !important;
+    border-color: #334155 !important;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35) !important;
+}
+
+body.dark-mode article {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode nav {
+    background-color: #111827 !important;
+}
+
+body.dark-mode .tab-menu {
+    background-color: transparent !important;
+}
+
+body.dark-mode .tab-link {
+    background: #1f2937 !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .tab-link:hover {
+    background: #334155 !important;
+}
+
+body.dark-mode .tab-link.active {
+    background: #0f766e !important;
+    border-color: #0f766e !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background-color: #0f1720 !important;
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode input::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode button,
+body.dark-mode .theme-toggle {
+    background-color: #0f766e !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .theme-toggle:hover {
+    background-color: #115e59 !important;
+}
+
+body.dark-mode #quiz-result div {
+    background-color: #15202d !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #quiz-result div p {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode a {
+    color: #7dd3fc !important;
+}
+
+body.dark-mode a:hover {
+    color: #bae6fd !important;
+}
+
+/* ─── Debt Calculator: Light Mode ───────────────────────────────────────────── */
+
+#debt-container .debt-row {
+    background: #f3fbf5;
+    border: 1px solid #c8e8d2;
+}
+
+#debt-container .debt-row-label {
+    color: #033d1a;
+}
+
+#debt-container .debt-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #033d1a;
+    margin-bottom: 2px;
+    display: block;
+}
+
+#debt-container .debt-input {
+    border: 1px solid #b3d7c5;
+    background: #ffffff;
+    color: #033d1a;
+}
+
+#debt-container .debt-input::placeholder {
+    color: #7aad8e;
+}
+
+#debt-container .debt-section-box {
+    background: #f3fbf5;
+    border: 1px solid #c8e8d2;
+}
+
+#debt-container .strategy-label {
+    border: 2px solid #b3d7c5;
+    background: #f3fbf5;
+}
+
+#debt-container .strategy-label.strategy-selected {
+    border-color: #004d2c;
+    background: #eaf8ed;
+}
+
+#debt-container button#add-debt {
+    background: #eaf8ed;
+    color: #004d2c;
+    border: 1px solid #b3d7c5;
+}
+
+#debt-container button#calculate-btn {
+    background: #004d2c;
+    color: #ffffff;
+}
+
+#debt-container button#compare-btn {
+    background: #b3d7c5;
+    color: #033d1a;
+}
+
+#debt-container button.remove-debt {
+    color: #b71c1c;
+}
+
+/* ─── Debt row boxes ─────────────────────────────────────────────────────────── */
+
+#debt-container .debt-row {
+    border-radius: 16px !important;
+    padding: 18px;
+}
+
+#debt-container .debt-section-box {
+    border-radius: 16px !important;
+    padding: 16px;
+}
+
+#debt-container .debt-input {
+    border-radius: 10px !important;
+    padding: 10px 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#debt-container .strategy-label {
+    border-radius: 12px !important;
+    padding: 10px 14px;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+#debt-container button#add-debt,
+#debt-container button#calculate-btn,
+#debt-container button#compare-btn {
+    border-radius: 10px !important;
+    padding: 10px 18px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+/* ─── Debt Calculator: Dark Mode ────────────────────────────────────────────── */
+
+body.dark-mode #debt-container .debt-row {
+    background: #111826 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #debt-container .debt-row-label {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode #debt-container .debt-label {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode #debt-container .debt-muted {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode #debt-container .debt-input {
+    background-color: #0f1720 !important;
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #debt-container .debt-input::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode #debt-container .debt-section-box {
+    background: #111826 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #debt-container .strategy-label {
+    background: #111826 !important;
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode #debt-container .strategy-label.strategy-selected {
+    background: #0f1f2e !important;
+    border-color: #0f766e !important;
+}
+
+body.dark-mode #debt-container button#add-debt {
+    background-color: #1f2937 !important;
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #debt-container button#calculate-btn {
+    background-color: #0f766e !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode #debt-container button#compare-btn {
+    background-color: #1f2937 !important;
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #debt-container button.remove-debt {
+    background: none !important;
+    color: #f87171 !important;
+    border: none !important;
+}
+
+body.dark-mode #debt-results > div {
+    background: #111826 !important;
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode #debt-results table {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode #debt-results th,
+body.dark-mode #debt-results td {
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode #debt-results thead tr {
+    background: #0f1720 !important;
+}
+
+body.dark-mode #debt-results .debt-stat-box {
+    background: #0f1720 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #debt-results .debt-tip-box {
+    background: #0f1f2e !important;
+    border-color: #334155 !important;
+    color: #94a3b8 !important;
+}
+
+body.dark-mode #debt-results .compare-box {
+    background: #0f1720 !important;
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode #debt-results .compare-box-selected {
+    border-color: #0f766e !important;
+    background: #0f1f2e !important;
+}
+
+/* ─── Dark Mode: Budgeting, Savings & Career inputs ─────────────────────────── */
+
+body.dark-mode #budgeting-container input,
+body.dark-mode #savings-container input,
+body.dark-mode #career-container input,
+body.dark-mode #budgeting-container select,
+body.dark-mode #savings-container select,
+body.dark-mode #career-container select {
+    background-color: #0f1720 !important;
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #budgeting-container input::placeholder,
+body.dark-mode #savings-container input::placeholder,
+body.dark-mode #career-container input::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode #budgeting-container label,
+body.dark-mode #savings-container label,
+body.dark-mode #career-container label {
+    color: #e5e7eb !important;
 }
